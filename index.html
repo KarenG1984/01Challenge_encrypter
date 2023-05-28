@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alura Challenges: Encriptador</title>
+  <link rel="stylesheet" href="./Css/style.css">
+  <link rel="icon" href="./Assets/alura_icon.png" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="./index.html"><img src="./Assets/Logo.png" alt="Logo Alura"></a>
+    </div>
+  </header>
+
+  <section>
+    <form action="">
+      <textarea name="texto" id="text" placeholder="Ingrese el texto aquí"></textarea>
+      <p>🛈 Solo letras minúsculas y sin acentos</p>
+      <div class="buttons">
+        <button class="button__encrypter" id="btnEncrypt" type="button" onclick="encrypter()">Encriptar</button>
+        <button class="button__decryptor" type="button" onclick="decryptor()" value="Desencriptar">Desencriptar</button>
+      </div>
+    </form>
+  </section>
+
+  <aside>
+    <div class="content__side">
+      <div class="content__side--img">
+        <img src="./Assets/Muñeco.png" alt="Imagen texto no encontrado" id="imgSearch">
+      </div>
+      <div class="content__side--text" id="msgEncrypt">
+        <h2 id="msgError">Ningún mensaje fue encontrado</h2>
+        <p class="text__msg" id="paragraph">Ingresa el texto que deseas encriptar o desencriptar.</p>
+        <p class="text__msg--Encrypt" id="paragraphEncrypt"></p>
+      </div>
+      <div class="content__side--btn">
+        <button class="button__copy" id="btnCopy" type="button" onclick="copy()">Copiar</button>
+      </div>
+    </div>
+
+  </aside>
+
+  <footer>
+    <p>&copy Desarrollado por Karen Gómez</p>
+  </footer>
+</body>
+
+<script type="text/javascript" src="./Js/script.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+</html>
