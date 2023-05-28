@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --dark-blue: #0A3871;
+  --light-blue: #D8DFE8;
+  --background-blue: #F3F5FC;
+  --white: #FFFFFF;
+  --dark-gray: #343A40;
+  --light-gray: #495057;
+
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Inter', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--background-blue);
+  display: grid;
+  grid-template-columns: 70%;
+  grid-template-rows: 100px 80vh 30px;
+  grid-template-areas:
+    "header header aside"
+    "section section aside"
+    "footer footer footer"
+}
+
+header {
+  grid-area: header;
+  /* background-color: blueviolet; */
+}
+header .logo {
+  margin: 40px;
+}
+
+section {
+  grid-area: section;
+  /* background-color: indigo; */
+}
+section form {
+  margin: 80px 120px 50px 200px;
+}
+section form textarea {
+  width: 100%;
+  height: 300px;
+  background: var(--background-blue);
+  border: none;
+  font-family: 'Inter', sans-serif;
+  color: var(--dark-blue);
+  font-weight: 400;
+  font-size: 28px;
+  padding: 5px;
+}
+section form textarea:focus {
+	outline: 2px solid var(--dark-blue);
+}
+section form p {
+  margin: 15px 0;
+  font-size: 12px;
+  color: var(--light-gray);
+}
+section .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.button__encrypter {
+  background: var(--dark-blue);
+  color: var(--light-blue);
+  margin: 0 8px;
+}
+.button__decryptor {
+  background: var(--light-blue);
+  color: var(--dark-blue);
+}
+.button__encrypter,
+.button__decryptor,
+.button__copy {
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 8px;
+  width: 300px;
+  outline: none;
+  border: 1px solid var(--dark-blue);
+}
+
+aside {
+  /* background-color: darkmagenta; */
+  grid-area: aside;
+}
+.content__side {
+  /* border: 1px solid var(--dark-blue); */
+  background-color: var(--white);
+  border-radius: 30px;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  width: 350px;
+  height: 90%;
+
+  padding: 100px 30px;
+  margin: 25px;
+}
+.content__side--img img {
+  width: 250px;
+  height: auto;
+}
+.content__side--text {
+  margin: 15px 0;
+  text-align: center;
+  color: var(--dark-gray);
+}
+.content__side--text .text__msg {
+  font-size: 12px;
+}
+.content__side--text .text__msg--Encrypt {
+  font-size: 18px;
+  color: var(--light-gray);
+}
+
+.content__side--btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.button__copy {
+  color: var(--dark-blue);
+  display: none;
+}
+
+footer {
+  /* background-color: darkorchid; */
+  background-color: var(--dark-blue);
+  grid-area: footer;
+}
+footer p {
+  color: var(--light-blue);
+  /* color: var(--dark-blue); */
+  font-size: 18px;
+  text-align: right;
+  padding: 5px;
+}
+
+/* Responsive */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header header header"
+    "section section section"
+    "aside aside aside"
+    "footer footer footer"
+  }
+  section form {
+    margin: 100px;
+  }
+  .content__side {
+    width: 570px;
+    height: 30px;
+    margin: 25px auto;
+  }
+  .content__side--img img {
+    display: none;
+  }
+  .content__side--text {
+    margin: 0;
+  }
+  .text__msg--Encrypt {
+    margin: 10px;
+  }
+  .button__copy {
+    padding: 10px 280px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  body {
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header header header"
+    "section section section"
+    "aside aside aside"
+    "footer footer footer"
+  }
+  section form {
+    margin: 10px;
+  }
+  section form textarea {
+    resize: vertical;
+    min-height: 60px;
+    max-height: 300px;
+  }
+  section .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .content__side {
+    width: 375px;
+    height: 30px;
+  }
+  .content__side--img img {
+    display: none;
+  }
+  .content__side--text {
+    margin: 0;
+  }
+  .text__msg--Encrypt {
+    margin: 10px;
+  }
+  .button__copy {
+    padding: 10px 100px;
+  }
+  footer p {
+    text-align: left;
+  }
+}
